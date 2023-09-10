@@ -1,33 +1,9 @@
-/* .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.content-img,
-.contenet-login {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-img {
-    text-align: center;
-    background-color: antiquewhite;
-}
-
-.contenet-login,
-.content-img {
-    text-align: center;
-} */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 
 .content {
@@ -48,6 +24,13 @@
 .form>h1 {
     padding-top: 40px;
     font-size: 40px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 mat-divider {

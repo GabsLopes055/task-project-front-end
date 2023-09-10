@@ -1,16 +1,4 @@
-<!-- <div class="container">
-    <div class="content-img">
-        <div class="content-img">
-            aqui
-        </div>
-    </div>
-    <div class="contenet-login">
-        <div class="content-login">
-            aqui também
-        </div>
-    </div>
-</div> -->
-<div class="container" >
+<div class="container">
     <div class="content mat-elevation-z8">
         <div class="img">
             <img matCardImage src="../assets/img/Checklist.gif">
@@ -19,16 +7,18 @@
             <h1>Web Task</h1>
             <h5>A sua lista de tarefas</h5>
             <mat-divider></mat-divider>
-            <mat-form-field appearance="outline">
-                <mat-label>Login</mat-label>
-                <input matInput placeholder="Informe seu Login">
-                <mat-icon matSuffix>person</mat-icon>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Senha</mat-label>
-                <input matInput placeholder="Informe sua Senha">
-                <mat-icon matSuffix>key</mat-icon>
-            </mat-form-field>
+            <form [formGroup]="formLogin">
+                <mat-form-field appearance="outline">
+                    <mat-label>Login</mat-label>
+                    <input matInput placeholder="Informe seu Login" formControlName="email">
+                    <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput placeholder="Informe sua Senha" type="password" formControlName="password">
+                    <mat-icon matSuffix>key</mat-icon>
+                </mat-form-field>
+            </form>
             <div class="fictures">
                 <div class="remember">
                     <mat-checkbox class="example-margin">Lembrar</mat-checkbox>
@@ -38,32 +28,7 @@
                 </div>
             </div>
 
-            <button mat-raised-button color="primary">Logar</button>
+            <button mat-raised-button color="primary" (click)="login()">Logar</button>
         </div>
     </div>
 </div>
-
-
-
-<!-- <mat-card>
-    <div class="title-card">
-        <h1>Web Task</h1>
-        <h5>A sua lista de tarefas</h5>
-    </div>
-    <img matCardImage src="../assets/img/Checklist.gif">
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-    <mat-card-content>
-        Text content
-    </mat-card-content>
-    <mat-card-actions align="start">
-
-    </mat-card-actions>
-    <mat-card-footer>
-        Footer
-    </mat-card-footer>
-</mat-card> -->
