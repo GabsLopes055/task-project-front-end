@@ -7,11 +7,13 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
+
+
 :root {
-    --primary-color: #153d77;
+    --primary-color: #3f51b5;
     --secondary-color: #6c757d;
     --white-color: #fff;
     --success-color: #198754;
@@ -20,7 +22,7 @@ body {
 }
 
 .success {
-    --mdc-snackbar-container-color: var(--success-color);
+    --mdc-snackbar-container-color: var(--primary-color);
     --mat-mdc-snack-bar-button-color: var(--white-color);
 }
 

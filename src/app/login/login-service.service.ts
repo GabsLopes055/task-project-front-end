@@ -29,7 +29,7 @@ export class LoginServiceService {
 
   errorHandler(e: any): Observable<any> {
     if(e.status == 401) {
-      this.showMessage("Acesso negado !", true)
+      this.showMessage("Usuário ou Senha Inválidos !", true)
     }
     return EMPTY;
   }

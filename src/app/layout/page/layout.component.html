@@ -1,0 +1,37 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened>
+        <mat-toolbar color="primary">
+            <!-- <mat-toolbar-row>
+                <h2>Lista de Tarefas</h2>
+            </mat-toolbar-row> -->
+            <mat-toolbar-row>
+                <button mat-fab class="mat-fab" matTooltip="Dashboard">
+                    <mat-icon color="primary">home</mat-icon>
+                </button>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <button mat-fab class="mat-fab" matTooltip="Criar tarefa">
+                    <mat-icon color="primary">create_new_folder</mat-icon>
+                </button>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <button mat-fab class="mat-fab" matTooltip="Tarefas em Andamento">
+                    <mat-icon color="primary">hourglass_top</mat-icon>
+                </button>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <button mat-fab class="mat-fab" matTooltip="Tarefas Concluídas">
+                    <mat-icon color="primary">check_circle</mat-icon>
+                </button>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <button mat-fab class="mat-fab" matTooltip="Sair" (click)="logout()">
+                    <mat-icon color="primary">logout</mat-icon>
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
