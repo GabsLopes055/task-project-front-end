@@ -1,0 +1,26 @@
+.container {
+    height: 100%;
+    width: 100%;
+
+}
+
+mat-drawer {
+    width: 15%;
+}
+
+mat-toolbar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+mat-toolbar-row {
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.mat-fab {
+    /* margin: 30%; */
+    background-color: white;
+}
