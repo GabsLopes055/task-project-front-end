@@ -18,6 +18,7 @@ import { LayoutComponent } from './layout/page/layout.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { UserAutenticateGuard } from './login/user-autenticate.guard';
 
 @NgModule({
   declarations: [

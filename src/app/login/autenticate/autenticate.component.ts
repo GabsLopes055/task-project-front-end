@@ -29,7 +29,8 @@ export class AutenticateComponent {
 
   login() {
     this.service.login(this.formLogin.value).subscribe((response) => {
-      this.router.navigate(['dashboard'])
+      this.router.navigate(['dashboard']);
+      this.service.loggged();
     })
   }
 }
