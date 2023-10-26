@@ -6,6 +6,7 @@
 
 mat-drawer {
     width: 15%;
+    background-color: #3f51b5;
 }
 
 mat-toolbar {
@@ -13,11 +14,15 @@ mat-toolbar {
     width: 100%;
     display: flex;
     justify-content: center;
+
+    margin: 0;
+    padding: 0;
 }
 
 mat-toolbar-row {
     justify-content: center;
     margin-bottom: 50px;
+    background-color: #3f51b5;
 }
 
 .mat-fab {

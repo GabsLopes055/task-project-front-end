@@ -12,6 +12,7 @@ import { login } from 'src/interfaces/login.model';
 export class LoginServiceService {
 
   url = environment.baseURL;
+  loggedInKey = 'logado';
 
   constructor(
     private http: HttpClient,
@@ -28,7 +29,7 @@ export class LoginServiceService {
   }
 
   errorHandler(e: any): Observable<any> {
-    if(e.status == 401) {
+    if (e.status == 401) {
       this.showMessage("Usuário ou Senha Inválidos !", true)
     }
     return EMPTY;
@@ -39,6 +40,21 @@ export class LoginServiceService {
       map((response) => response),
       catchError(e => this.errorHandler(e))
     )
+  }
+
+  // Método para verificar se o usuário está autenticado
+  isAuthenticated(): boolean {
+    return localStorage.getItem(this.loggedInKey) === 'true';
+  }
+
+  // Método para definir o status de login como verdadeiro
+  loggged(): void {
+    localStorage.setItem(this.loggedInKey, 'true');
+  }
+
+  // Método para deslogar (definir o status de login como falso)
+  logout(): void {
+    localStorage.setItem(this.loggedInKey, 'false');
   }
 
 }
