@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AutenticateComponent } from './login/autenticate/autenticate.component';
 import { LayoutComponent } from './layout/page/layout.component';
 import { UserAutenticateGuard } from './login/user-autenticate.guard';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: AutenticateComponent },
+  { path: '', component: LoginComponent },
   {
-    path: 'dashboard', component: LayoutComponent, canActivate: [UserAutenticateGuard]
-
+    path: 'dashboard', component: LayoutComponent, canActivate: [UserAutenticateGuard],
+    children: [
+      {path: '', component: HomeComponent}
+    ]
   },
-  { path: "logout", redirectTo: '', canActivate: [UserAutenticateGuard] },
   { path: '**', redirectTo: '', canActivate: [UserAutenticateGuard] }
 ];
 

@@ -13,8 +13,9 @@ export class UserAutenticateGuard implements CanActivate {
   canActivate(): boolean {
 
     if(this.service.isAuthenticated() === false){
-      return false
       this.router.navigate([""])
+      this.service.showMessage("Por favor, refaça o login", true)
+      return false
     }
 
     return true;

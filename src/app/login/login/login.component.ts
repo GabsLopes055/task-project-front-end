@@ -4,12 +4,11 @@ import { LoginServiceService } from '../login-service.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-autenticate',
-  templateUrl: './autenticate.component.html',
-  styleUrls: ['./autenticate.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AutenticateComponent {
-
+export class LoginComponent {
   formLogin!: FormGroup;
 
   constructor(

@@ -15,6 +15,10 @@
     border-radius: 1%;
 }
 
+img {
+    width: auto;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -24,7 +28,7 @@
 
 .form>h1 {
     padding-top: 40px;
-    font-size: 40px;
+    font-size: 50px;
     
 }
 
