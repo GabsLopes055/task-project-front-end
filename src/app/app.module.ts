@@ -20,13 +20,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/page/layout.component';
 import { LoginComponent } from './login/login/login.component';
-
+import { CreateTaskComponent } from './create-task/create-task.component';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomeComponent,
     LoginComponent,
+    CreateTaskComponent,
   ],
   imports: [
     RouterLink,
@@ -47,7 +49,8 @@ import { LoginComponent } from './login/login/login.component';
     MatToolbarModule,
     MatButtonModule,
     MatTooltipModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
