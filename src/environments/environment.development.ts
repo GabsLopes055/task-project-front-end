@@ -1,3 +1,3 @@
 export const environment = {
-    baseURL: "http://localhost:8080/task-api/"
+    baseURL: "http://localhost:8080/task-api"
 };

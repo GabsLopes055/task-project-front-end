@@ -36,7 +36,7 @@ export class LoginServiceService {
   }
 
   public login(login: login): Observable<boolean> {
-    return this.http.post<login>(this.url + "login", login).pipe(
+    return this.http.post<login>(this.url + "/login", login).pipe(
       map((response) => response),
       catchError(e => this.errorHandler(e))
     )
