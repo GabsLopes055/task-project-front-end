@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../login/login-service.service';
+import { TaskService } from '../services/task.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-task',
@@ -13,8 +15,9 @@ export class CreateTaskComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service: LoginServiceService
-  ){
+    private service: TaskService,
+    private message: MatSnackBar
+  ) {
     this.formTask = this.createForm()
   }
 
@@ -26,14 +29,34 @@ export class CreateTaskComponent {
     })
   }
 
-  onSubmit(){
-    if(this.formTask.valid) {
-      this.service.showMessage("Valido", false)
+  onSubmit() {
+    if (this.formTask.valid) {
+      this.service.saveTask(this.formTask.value)
+        .subscribe(() => {
+
+          this.message.open("Tarefa Criada", "X", {
+            horizontalPosition: "end",
+            verticalPosition: "top",
+            duration: 7000
+          })
+
+          this.formTask = this.createForm()
+        }, error => {
+          this.message.open(error.message, "X", {
+            horizontalPosition: "end",
+            verticalPosition: "top",
+            duration: 7000
+          })
+        })
+      
     } else {
-      this.service.showMessage("Preencha o formulário corretamente", true)
+      this.message.open("Preencha o formulário corretamente", "X", {
+        horizontalPosition: "end",
+        verticalPosition: "top"
+      })
     }
 
-    this.formTask.reset()
+    // 
   }
 
 }

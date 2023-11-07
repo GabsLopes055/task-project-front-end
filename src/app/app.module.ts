@@ -22,6 +22,7 @@ import { LayoutComponent } from './layout/page/layout.component';
 import { LoginComponent } from './login/login/login.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ObserversModule } from '@angular/cdk/observers';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatTooltipModule,
     MatDividerModule,
-    MatSelectModule
+    MatSelectModule,
+    ObserversModule
   ],
   providers: [],
   bootstrap: [AppComponent]

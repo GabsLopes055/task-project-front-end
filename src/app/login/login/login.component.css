@@ -65,5 +65,6 @@ mat-form-field {
     .content{
         display: flex;
         flex-direction: column;
+        width: 80%;
     }
 }
