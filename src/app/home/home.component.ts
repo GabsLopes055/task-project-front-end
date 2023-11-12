@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { LayoutComponent } from '../layout/page/layout.component';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  constructor(
+    private sidenav: LayoutComponent
+  ) { }
+
+  openSidenav() {
+    this.sidenav.openSidenav()
+  }
+
 
 }
