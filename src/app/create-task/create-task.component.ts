@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../login/login-service.service';
 import { TaskService } from '../services/task.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LayoutComponent } from '../layout/page/layout.component';
 
 @Component({
   selector: 'app-create-task',
@@ -16,7 +17,8 @@ export class CreateTaskComponent {
   constructor(
     private formBuilder: FormBuilder,
     private service: TaskService,
-    private message: MatSnackBar
+    private message: MatSnackBar,
+    private sidenav: LayoutComponent
   ) {
     this.formTask = this.createForm()
   }
@@ -27,6 +29,10 @@ export class CreateTaskComponent {
       'description': ['', Validators.required],
       'priority': ['', Validators.required]
     })
+  }
+
+  openSidenav() {
+    this.sidenav.openSidenav()
   }
 
   onSubmit() {

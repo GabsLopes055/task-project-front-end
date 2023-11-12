@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer, MatDrawerContainer, MatSidenav } from '@angular/material/sidenav';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { LoginServiceService } from 'src/app/login/login-service.service';
 
 @Component({
@@ -9,11 +11,20 @@ import { LoginServiceService } from 'src/app/login/login-service.service';
 })
 export class LayoutComponent {
 
-  constructor(private route: Router, private service: LoginServiceService){}
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  constructor(private router: Router,
+    private service: LoginServiceService
+  ) { }
+
+  openSidenav() {
+    this.sidenav.open()
+  }
+
 
   logout() {
-    this.route.navigate([""])
     this.service.logout()
+    this.router.navigate([""])
   }
 
 }

@@ -1,31 +1,41 @@
 <mat-drawer-container class="container">
-    <mat-drawer mode="side" opened>
+    <mat-drawer mode="side" #sidenav>
         <mat-toolbar color="primary">
             <!-- <mat-toolbar-row>
                 <h2>Lista de Tarefas</h2>
             </mat-toolbar-row> -->
             <mat-toolbar-row>
-                <button mat-fab class="mat-fab" matTooltip="Dashboard" routerLink="dashboard">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>close</mat-icon>
+                </button>
+
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <button mat-raised-button class="mat-fab" matTooltip="Dashboard" routerLink="dashboard"
+                    (click)="sidenav.close()"> Dashboard
                     <mat-icon color="primary">home</mat-icon>
                 </button>
             </mat-toolbar-row>
             <mat-toolbar-row>
-                <button mat-fab class="mat-fab" matTooltip="Criar tarefa" routerLink="createTask">
+                <button mat-raised-button class="mat-fab" matTooltip="Criar tarefa" routerLink="createTask"
+                    (click)="sidenav.close()"> Criar
+                    tarefa
                     <mat-icon color="primary">create_new_folder</mat-icon>
                 </button>
             </mat-toolbar-row>
             <mat-toolbar-row>
-                <button mat-fab class="mat-fab" matTooltip="Tarefas em Andamento">
+                <button mat-raised-button class="mat-fab" matTooltip="Tarefas em Andamento" (click)="sidenav.close()">
+                    Tarefas em Andamento
                     <mat-icon color="primary">hourglass_top</mat-icon>
                 </button>
             </mat-toolbar-row>
             <mat-toolbar-row>
-                <button mat-fab class="mat-fab" matTooltip="Tarefas Concluídas">
+                <button mat-raised-button class="mat-fab" matTooltip="Tarefas Concluídas" (click)="sidenav.close()"> Tarefas Concluídas
                     <mat-icon color="primary">check_circle</mat-icon>
                 </button>
             </mat-toolbar-row>
             <mat-toolbar-row>
-                <button mat-fab class="mat-fab" matTooltip="Sair" (click)="logout()">
+                <button mat-raised-button class="mat-fab" matTooltip="Sair" (click)="logout()"> Sair
                     <mat-icon color="primary">logout</mat-icon>
                 </button>
             </mat-toolbar-row>
