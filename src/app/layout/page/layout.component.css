@@ -13,8 +13,7 @@ mat-toolbar {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
-
+    /* justify-content: safe; */
     margin: 0;
     padding: 0;
 }
@@ -37,6 +36,10 @@ mat-icon {
 .mat-fab {
     /* margin: 30%; */
     background-color: white;
+}
+
+mat-drawer-content {
+    background-color: #3f51b5;
 }
 
 @media (max-width: 1700px) {
