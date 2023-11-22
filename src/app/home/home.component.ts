@@ -9,6 +9,8 @@ import { LayoutComponent } from '../layout/page/layout.component';
 })
 export class HomeComponent {
 
+  panelOpenState: boolean = false
+
   constructor(
     private sidenav: LayoutComponent
   ) { }
