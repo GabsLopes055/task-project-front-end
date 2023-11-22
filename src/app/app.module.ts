@@ -21,8 +21,11 @@ import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/page/layout.component';
 import { LoginComponent } from './login/login/login.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { ObserversModule } from '@angular/cdk/observers';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,9 @@ import { ObserversModule } from '@angular/cdk/observers';
     MatTooltipModule,
     MatDividerModule,
     MatSelectModule,
-    ObserversModule
+    ObserversModule,
+    MatExpansionModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,6 +19,7 @@ mat-toolbar {
 }
 
 mat-toolbar-row {
+    margin-top: 30px;
     justify-content: center;
     margin-bottom: 10px;
     background-color: #3f51b5;

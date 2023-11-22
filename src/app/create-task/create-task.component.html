@@ -1,43 +1,47 @@
 <div class="container">
-    <mat-card>
-        <div class="menu">
-            <div class="button-and-title">
-                <button mat-icon-button (click)="openSidenav()"><mat-icon>menu</mat-icon></button>
-                <h1>Terefas</h1>
+    
+    <div class="main">
+        <mat-card>
+            <div class="menu">
+                <div class="button-and-title">
+                    <button mat-icon-button (click)="openSidenav()"><mat-icon>menu</mat-icon></button>
+                    <h1>Criar uma nova tarefa</h1>
+                </div>
+                <h6>*Preencha o formulário corretamente</h6>
             </div>
-            <h6>*Preencha o formulário corretamente</h6>
-        </div>
-    </mat-card>
+        </mat-card>
+    </div>
 
+    <div class="body">
+        <mat-card>
+            <form [formGroup]="formTask" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
 
-    <mat-card>
-        <form [formGroup]="formTask" (ngSubmit)="onSubmit()">
-            <mat-form-field>
-                <mat-label>Nome</mat-label>
-                <input matInput formControlName="name">
-            </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Descrição</mat-label>
+                    <textarea matInput formControlName="description" rows="18"> </textarea>
+                </mat-form-field>
 
-            <mat-form-field>
-                <mat-label>Descrição</mat-label>
-                <textarea matInput formControlName="description" rows="10"> </textarea>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Prioridade</mat-label>
-                <mat-select formControlName="priority">
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="4">4</mat-option>
-                    <mat-option value="5">5</mat-option>
-                    <mat-option value="6">6</mat-option>
-                    <mat-option value="7">7</mat-option>
-                    <mat-option value="8">8</mat-option>
-                    <mat-option value="9">9</mat-option>
-                    <mat-option value="10">10</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button mat-raised-button color="primary" type="submit">Salvar</button>
-        </form>
-    </mat-card>
+                <mat-form-field>
+                    <mat-label>Prioridade</mat-label>
+                    <mat-select formControlName="priority">
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="4">4</mat-option>
+                        <mat-option value="5">5</mat-option>
+                        <mat-option value="6">6</mat-option>
+                        <mat-option value="7">7</mat-option>
+                        <mat-option value="8">8</mat-option>
+                        <mat-option value="9">9</mat-option>
+                        <mat-option value="10">10</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Salvar</button>
+            </form>
+        </mat-card>
+    </div>
 </div>

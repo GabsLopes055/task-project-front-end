@@ -1,11 +1,49 @@
 <div class="container">
-    <mat-card>
-        <div class="menu">
-            <div class="button-and-title">
-                <button mat-icon-button (click)="openSidenav()"><mat-icon>menu</mat-icon></button>
-                <h1>Terefas</h1>
+
+    <div class="main">
+        <mat-card>
+            <div class="menu">
+                <div class="button-and-title">
+                    <button mat-icon-button (click)="openSidenav()"><mat-icon>menu</mat-icon></button>
+                    <h1>Tarefas</h1>
+                </div>
+                <h6>* Listagem de todas as tarefas</h6>
             </div>
-            <h6>*Todas as tarefas</h6>
-        </div>
-    </mat-card>
+        </mat-card>
+    </div>
+
+    <div class="body">
+        <mat-card>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Titulo da Tarefa
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <!-- <button mat-icon-button color="primary"><mat-icon>check</mat-icon></button> -->
+                        <!-- <button class="button-status" mat-icon-button color="primary"><mat-icon class="icon-status">check</mat-icon></button> -->
+                        <mat-chip-row ><button class="button-status" mat-icon-button color="primary"><mat-icon class="icon-status">check</mat-icon></button></mat-chip-row>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Descrição da tarefa</p>
+                <h6>Status:<span class="status"> Finalizada</span></h6>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Titulo da Tarefa
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <!-- <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button> -->
+                        <mat-chip-row ><button class="button-status" mat-icon-button color="warn"><mat-icon class="icon-status">close</mat-icon></button></mat-chip-row>
+                        
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Descrição da tarefa</p>
+                <h6>Status:<span class="status-pendente"> Pendente</span></h6>
+            </mat-expansion-panel>
+
+        </mat-card>
+    </div>
 </div>

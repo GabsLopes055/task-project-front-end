@@ -8,7 +8,8 @@ import { MatDrawer, MatDrawerContainer, MatSidenav, MatSidenavModule } from '@an
   declarations: [],
   imports: [
     CommonModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    
   ]
 })
 export class LayoutModule { }
