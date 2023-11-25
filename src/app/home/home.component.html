@@ -14,36 +14,30 @@
 
     <div class="body">
         <mat-card>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Titulo da Tarefa
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        <!-- <button mat-icon-button color="primary"><mat-icon>check</mat-icon></button> -->
-                        <!-- <button class="button-status" mat-icon-button color="primary"><mat-icon class="icon-status">check</mat-icon></button> -->
-                        <mat-chip-row ><button class="button-status" mat-icon-button color="primary"><mat-icon class="icon-status">check</mat-icon></button></mat-chip-row>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>Descrição da tarefa</p>
-                <h6>Status:<span class="status"> Finalizada</span></h6>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Titulo da Tarefa
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        <!-- <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button> -->
-                        <mat-chip-row ><button class="button-status" mat-icon-button color="warn"><mat-icon class="icon-status">close</mat-icon></button></mat-chip-row>
-                        
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>Descrição da tarefa</p>
-                <h6>Status:<span class="status-pendente"> Pendente</span></h6>
-            </mat-expansion-panel>
-
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                    *ngFor="let taks of listTasks">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{taks.name}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <mat-chip-row *ngIf="taks.finish; else falseFinish"><mat-icon
+                                    class="icon-status">check</mat-icon></mat-chip-row>
+                            <ng-template #falseFinish>
+                                <mat-chip-row><mat-icon class="status-pendente">close</mat-icon></mat-chip-row>
+                            </ng-template>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>{{taks.description}}</p>
+                    <h6><strong>Status:</strong><span class="icon-status" *ngIf="taks.finish; else statusFinish">
+                            Finalizada</span></h6>
+                    <ng-template #statusFinish>
+                        <span class="status-pendente"> Pendente</span>
+                    </ng-template>
+                    <h6><strong>Prioridade:</strong><span> {{taks.priority}}</span></h6>
+                </mat-expansion-panel>
+            </mat-accordion>
         </mat-card>
     </div>
 </div>

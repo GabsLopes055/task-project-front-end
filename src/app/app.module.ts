@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ObserversModule } from '@angular/cdk/observers';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSelectModule,
     ObserversModule,
     MatExpansionModule,
-    MatChipsModule
+    MatChipsModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
