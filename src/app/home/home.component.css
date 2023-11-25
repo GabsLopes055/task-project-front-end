@@ -49,10 +49,11 @@ mat-panel-description {
     /* align-items: center; */
 }
 
-.status {
+.icon-status {
     color: green;
 }
 
 .status-pendente {
     color: red;
 }
+
