@@ -6,6 +6,7 @@ import { UserAutenticateGuard } from './login/user-autenticate.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { TasksInProgressComponent } from './tasks-in-progress/tasks-in-progress.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
     path: '', component: LayoutComponent, canActivate: [UserAutenticateGuard],
     children: [
       {path: 'dashboard', component: HomeComponent},
-      {path: 'createTask', component: CreateTaskComponent}
+      {path: 'createTask', component: CreateTaskComponent},
+      {path: 'tasksInProgress', component: TasksInProgressComponent}
     ]
   },
   { path: '**', redirectTo: '', canActivate: [UserAutenticateGuard] }

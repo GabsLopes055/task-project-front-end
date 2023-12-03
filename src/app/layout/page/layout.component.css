@@ -5,7 +5,7 @@
 }
 
 mat-drawer {
-    width: 100%;
+    width: 20%;
     background-color: #3f51b5;
 }
 
@@ -43,8 +43,8 @@ mat-drawer-content {
     background-color: #3f51b5;
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1000px) {
     mat-drawer {
-        /* width: 0%; */
+        width: 100%;
     }
 }
