@@ -14,7 +14,7 @@
 
     <div class="body">
         <mat-card>
-            <form [formGroup]="formTask" (ngSubmit)="onSubmit()">
+            <form [formGroup]="formTask" (ngSubmit)="saveTask()">
                 <mat-form-field>
                     <mat-label>Nome</mat-label>
                     <input matInput formControlName="name">

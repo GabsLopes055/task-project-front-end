@@ -53,6 +53,12 @@ mat-panel-description {
     /* align-items: center; */
 }
 
+.finish-task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .icon-status {
     color: green;
 }

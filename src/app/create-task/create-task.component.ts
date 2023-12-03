@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../login/login-service.service';
-import { TaskService } from '../services/task.service';
+import { TaskService } from './task.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LayoutComponent } from '../layout/page/layout.component';
 
@@ -35,18 +35,19 @@ export class CreateTaskComponent {
     this.sidenav.openSidenav()
   }
 
-  onSubmit() {
+  saveTask(): void {
     if (this.formTask.valid) {
       this.service.saveTask(this.formTask.value)
         .subscribe(() => {
-
           this.message.open("Tarefa Criada", "X", {
             horizontalPosition: "end",
             verticalPosition: "top",
             duration: 7000
           })
 
-          this.formTask = this.createForm()
+          
+          this.formTask = this.createForm();
+          this.formTask.clearValidators;
         }, error => {
           this.message.open(error.message, "X", {
             horizontalPosition: "end",
@@ -61,8 +62,6 @@ export class CreateTaskComponent {
         verticalPosition: "top"
       })
     }
-
-    // 
   }
 
 }

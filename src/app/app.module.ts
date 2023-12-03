@@ -26,6 +26,9 @@ import { ObserversModule } from '@angular/cdk/observers';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TasksInProgressComponent } from './tasks-in-progress/tasks-in-progress.component';
+import { TaskDeleteComponent } from './tasks-in-progress/task-delete/task-delete.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     HomeComponent,
     LoginComponent,
     CreateTaskComponent,
+    TasksInProgressComponent,
+    TaskDeleteComponent
   ],
   imports: [
     RouterLink,
@@ -59,7 +64,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     ObserversModule,
     MatExpansionModule,
     MatChipsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
