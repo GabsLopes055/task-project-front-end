@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: auto;
 }
 
 .main,
@@ -15,10 +16,10 @@
     /* width: 100vh; */
 }
 
-.body > mat-card {
+.body>mat-card {
     width: 100%;
     padding: 2%;
-    
+
 }
 
 .menu {
@@ -70,4 +71,3 @@ mat-panel-description {
 .status-warning {
     color: #FFC300;
 }
-

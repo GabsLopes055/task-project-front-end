@@ -11,3 +11,7 @@ export interface taskResponse {
     "finish": boolean,
     "priority": number
 }
+
+export interface finishTask {
+    "finish": boolean
+}

@@ -29,6 +29,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TasksInProgressComponent } from './tasks-in-progress/tasks-in-progress.component';
 import { TaskDeleteComponent } from './tasks-in-progress/task-delete/task-delete.component';
+import { FinishTaskComponent } from './tasks-in-progress/finish-task/finish-task.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TaskDeleteComponent } from './tasks-in-progress/task-delete/task-delete
     LoginComponent,
     CreateTaskComponent,
     TasksInProgressComponent,
-    TaskDeleteComponent
+    TaskDeleteComponent,
+    FinishTaskComponent
   ],
   imports: [
     RouterLink,

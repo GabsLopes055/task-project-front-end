@@ -31,6 +31,15 @@ export class CreateTaskComponent {
     })
   }
 
+  showMessage(msg: string, error: boolean) {
+    this.message.open(msg, "X", {
+      duration: 8000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: error ? "error" : "success"
+    })
+  }
+
   openSidenav() {
     this.sidenav.openSidenav()
   }
@@ -39,15 +48,8 @@ export class CreateTaskComponent {
     if (this.formTask.valid) {
       this.service.saveTask(this.formTask.value)
         .subscribe(() => {
-          this.message.open("Tarefa Criada", "X", {
-            horizontalPosition: "end",
-            verticalPosition: "top",
-            duration: 7000
-          })
-
-          
-          this.formTask = this.createForm();
-          this.formTask.clearValidators;
+          this.showMessage("Tarefa Cadastrada !", false)
+          this.formTask = this.createForm()
         }, error => {
           this.message.open(error.message, "X", {
             horizontalPosition: "end",

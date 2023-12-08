@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { taskRequest, taskResponse } from 'src/interfaces/task.model';
+import { finishTask, taskRequest, taskResponse } from 'src/interfaces/task.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,8 +17,12 @@ export class TasksInProgressService {
     return this.http.get<taskResponse[]>(this.url + "/pending");
   }
 
-  public deleteTask(cdId: number): Observable<void> {
-    return this.http.delete<any>(this.url + cdId);
+  public deleteTask(cdId: number): Observable<any> {
+    return this.http.delete<any>(this.url + "/" + cdId);
+  }
+
+  public finishTask(finishTask: taskResponse): Observable<taskResponse> {    
+    return this.http.put<taskResponse>(this.url + "/" + finishTask.cdId, finishTask);
   }
 
 }

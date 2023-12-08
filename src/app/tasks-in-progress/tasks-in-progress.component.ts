@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LayoutComponent } from '../layout/page/layout.component';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskDeleteComponent } from './task-delete/task-delete.component';
+import { FinishTaskComponent } from './finish-task/finish-task.component';
 
 
 
@@ -48,10 +49,28 @@ export class TasksInProgressComponent {
 
   deleteTask(cdId: number) {
     this.dialog.open(TaskDeleteComponent, {
-      data: cdId,
+      data: {
+        cdTask: cdId
+      },
       width: '80%',
-      height: '50%'
+      height: 'auto'
     });
   }
+
+  finishTask(task: taskResponse) {
+    this.dialog.open(FinishTaskComponent, {
+      data: {
+        task: task
+      },
+      width: '80%',
+      height: 'auto'
+    });
+  }
+
+  modal = this.dialog.afterAllClosed.subscribe(() => {
+    this.listTasksInProgress()
+  })
+
+  
 
 }
