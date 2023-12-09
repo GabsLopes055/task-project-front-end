@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="main">
+        <mat-card>
+            <div class="menu">
+                <div class="button-and-title">
+                    <button mat-icon-button (click)="openSidenav()"><mat-icon>menu</mat-icon></button>
+                    <h1>Tarefas Concluídas</h1>
+                </div>
+                <h6>* Listagem de todas as tarefas concluídas</h6>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="body">
+        <mat-card>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                    *ngFor="let taks of listTasks">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{taks.name}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <mat-chip-row *ngIf="taks.finish; else falseFinish"><mat-icon
+                                    class="icon-status">check</mat-icon></mat-chip-row>
+                            <ng-template #falseFinish>
+                                <mat-chip-row><mat-icon class="status-pendente">close</mat-icon></mat-chip-row>
+                            </ng-template>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>{{taks.description}}</p>
+                    <h6><strong>Status:</strong><span class="icon-status" *ngIf="taks.finish; else statusFinish">
+                            Finalizada</span></h6>
+                    <ng-template #statusFinish>
+                        <span class="status-pendente"> Pendente</span>
+                    </ng-template>
+
+                    <ng-container *ngIf="taks.priority <= 4">
+                        <h6><strong>Prioridade:</strong><span class="icon-status"> Baixa</span></h6>
+                    </ng-container>
+                    <ng-container *ngIf="taks.priority >= 5 && taks.priority <= 7">
+                        <h6><strong>Prioridade:</strong><span class="status-warning"> Média</span></h6>
+                    </ng-container>
+                    <ng-container *ngIf="taks.priority >= 8 && taks.priority <= 10">
+                        <h6><strong>Prioridade:</strong><span class="status-pendente"> Alta</span></h6>
+                    </ng-container>
+                    <ng-container *ngIf="taks.priority < 1 || taks.priority > 10">
+                        <h6><strong>Prioridade:</strong><span class="status-pendente"> Valor Inválido</span></h6>
+                    </ng-container>
+
+                    <!-- <ng-container [ngSwitch]="taks.priority">
+                        <ng-container *ngSwitch="taks.priority <= 4">
+                            <h6><strong>Prioridade:</strong><span>Baixa</span></h6>
+                        </ng-container>
+                        <ng-container *ngSwitch="taks.priority >= 5 && taks.priority <=7 ">
+                            <h6><strong>Prioridade:</strong><span>Medio</span></h6>
+                        </ng-container>
+                        <ng-container *ngSwitch="taks.priority >= 8 && taks.priority <=10 ">
+                            <h6><strong>Prioridade:</strong><span>Alta</span></h6>
+                        </ng-container>
+                    </ng-container> -->
+                    <!-- <h6><strong [ngSwitch]="taks.priority">Prioridade:</strong></h6>
+                    <ng-template *ngSwitchCase="taks.priority <= 4">
+                        <span> Baixa</span>
+                    </ng-template> -->
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card>
+    </div>
+</div>

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { TasksInProgressComponent } from './tasks-in-progress/tasks-in-progress.component';
+import { TasksFinishComponent } from './tasks-finish/tasks-finish.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
     children: [
       {path: 'dashboard', component: HomeComponent},
       {path: 'createTask', component: CreateTaskComponent},
-      {path: 'tasksInProgress', component: TasksInProgressComponent}
+      {path: 'tasksInProgress', component: TasksInProgressComponent},
+      {path: 'tasksFinish', component: TasksFinishComponent}
     ]
   },
   { path: '**', redirectTo: '', canActivate: [UserAutenticateGuard] }

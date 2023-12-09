@@ -25,13 +25,14 @@
             </mat-toolbar-row>
             <mat-toolbar-row>
                 <button mat-raised-button class="mat-fab" matTooltip="Tarefas em Andamento" routerLink="tasksInProgress"
-                (click)="sidenav.close()">
+                    (click)="sidenav.close()">
                     Tarefas em Andamento
                     <mat-icon color="primary">hourglass_top</mat-icon>
                 </button>
             </mat-toolbar-row>
             <mat-toolbar-row>
-                <button mat-raised-button class="mat-fab" matTooltip="Tarefas Concluídas" (click)="sidenav.close()"> Tarefas Concluídas
+                <button mat-raised-button class="mat-fab" matTooltip="Tarefas Concluídas" routerLink="tasksFinish"
+                    (click)="sidenav.close()"> Tarefas Concluídas
                     <mat-icon color="primary">check_circle</mat-icon>
                 </button>
             </mat-toolbar-row>
