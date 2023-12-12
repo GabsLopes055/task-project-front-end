@@ -21,7 +21,7 @@ export class LoginComponent {
 
   createForm(): FormGroup {
     return this.formBuilder.group({
-      email: ['gabriel.teixeira@sicoob.com.br', Validators.required],
+      email: ['teste@teste.com.br', Validators.required],
       password: ['123', Validators.required]
     })
   }
